@@ -21,6 +21,7 @@ class SummerProject {
 		'id',
 		'world_region'
 	);
+	);
 
 	var $focuses = array(
 	    4  => 'African American community',
@@ -95,7 +96,7 @@ class SummerProject {
 					$out->post_content = (string) $val;
 					break;
 				default:
-					$out->{$key} = $val;
+					$out->{str_replace('-','_',$key)} = $val;
 			}	
 		}
 		return $out;
