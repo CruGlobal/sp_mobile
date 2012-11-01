@@ -11,7 +11,7 @@
 
   <header class="page_header">
     <!--<a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/letsgo.png" border="0" alt="" id="letsgo" /></a>-->
-		<h1 class="page_title">Search Results for "<?php echo get_search_query(); ?>"</h1>
+		<h1 class="page_title">We found…<!-- Search Results for "<?php //echo get_search_query(); ?>" --></h1>
 	</header>
 
 <?php while ( have_posts() ) : the_post(); ?>

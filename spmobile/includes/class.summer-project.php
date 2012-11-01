@@ -17,7 +17,9 @@ class SummerProject {
 		'focus',
 		'from_weeks',
 		'to_weeks',
-		'job'
+		'job',
+		'id',
+		'world_region'
 	);
 
 	var $focuses = array(
