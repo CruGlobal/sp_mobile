@@ -1,0 +1,277 @@
+/***** VARIABLES *****/
+
+@white: #ffffff; .white {color: @white;}
+@black: #000000; .black {color: @black;}
+@gray_lightest: #dcdcde; .gray_lightest {color: @gray_lightest;}
+@gray_light: #c2c2c4; .gray_light {color: @gray_light;}
+@gray: #58585a; .gray {color: @gray;}
+@gray_dark: #404040; .gray_dark {color: @gray_dark;}
+@yellow: #ffe06a; .yellow {color: @yellow;}
+@red: #ec1d3b; .red {color: @red;}
+@green: #3fa960; .green {color: @green;}
+@blue_light: #90d9f0; .blue_light: {color: @blue_light;}
+@blue_dark: #00abbd; .blue_dark {color: @blue_dark;}
+
+@rounded_corners, .rounded_corners {-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;}
+
+/***** REUSABLES *****/
+
+.zeroed {margin: 0; padding: 0;}
+.clearboth {clear: both;}
+
+.stripes {
+  padding: 0;
+  list-style: none;
+  .zeroed;
+  li:nth-of-type(even) {background-color: @gray_lightest;}
+  a {.gray; display: block; padding: 3px 30px;}
+}
+
+.kulturista {font-family: 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+.myriad {font-family: "myriad-pro", Arial, Helvetica, sans-serif}
+
+/***** ELEMENTS *****/
+
+body {background: @gray_light url(../images/texture_bg.jpg) center top repeat fixed; font-size: 24px; .gray;}
+
+h1, h2, h3 {.red; margin-top: 0; font-weight: normal; margin-bottom: .8em; .kulturista;}
+h1 {font-size: 32px;}
+h2 {font-size: 28px; margin-bottom: .2em; .blue_dark;}
+
+p {margin: 0 0 1em; line-height: 1.3em; .myriad;}
+p:last-of-type {margin-bottom: 0;}
+
+a {text-decoration: none; .red;}
+
+article {margin-top: 1.5em;}
+article:first-of-type {margin-top: 0;}
+
+/***** LAYOUT *****/
+
+#site_wrapper {width: 640px; margin: 0 auto; max-width: 640px; position: relative;}
+#maincontent {background-color: @white; margin: 100px 30px 0; border: @gray 1px solid; .rounded_corners; padding: 5px 0 28px; position: relative; overflow: auto;}
+#maincontent h2, #maincontent p, #maincontent h2, #maincontent form {margin-left: 28px; margin-right: 28px;}
+
+/***** CONTENT *****/
+
+#letsgo {position: absolute; z-index: 50; left: 35px; top: -80px;}
+  
+.page_header {
+  .page_title {margin: 0 0 1em 138px; text-transform: lowercase;}
+}
+
+#searchform {
+  background-color: @white;
+  padding: 25px 30px;
+  label {display: none;}
+  #s {font-size: 48px; .white; background: @gray url(../images/magnifying_glass.png) 10px center no-repeat; .rounded_corners; padding: 25px 25px 25px 100px; border: none; .kulturista; max-width: 455px;}
+  #searchsubmit {display: none;}
+}
+
+footer {
+  /*position: absolute;
+  bottom: 0;*/
+  margin: 8px 0 10px;
+  padding-top: 18px;
+  background: url(../images/stitch.jpg) center top repeat-x;
+  ul, li {.zeroed; list-style: none;}
+  li {float: left; margin-left: 5px;}
+  a {display: inline-block; border: #ffffff 2px solid; width: 118px; line-height: 34px; padding: 42px 0; .rounded_corners; .white; text-align: center; font-size: 32px; text-shadow: @gray_dark 1px 1px 2px; box-shadow: @gray 0 0 3px inset; .kulturista;}
+  li.button1 a {background-color: @blue_light;}
+  li.button2 a {background-color: @green;}
+  li.button3 a {background-color: @red;}
+  li.button4 a {background-color: @yellow;}
+  li.button5 a {background-color: @gray;}
+  #copyright {font-size: 14px; line-height: 16px; text-align: center; margin-top: 5px; .myriad;}
+}
+
+/***** PAGE-SPECIFIC STYLES *****/
+
+#home {
+  background: @blue_dark url(../images/crosshatch.jpg) center center repeat;
+  #home_header {
+    padding: 30px 0 20px;
+    background: @white url(../images/header_bg.jpg) center bottom no-repeat;
+    text-align: center;
+    img {display: block; margin: 0 auto;}
+    #logo {margin-bottom: 12px;}
+  }
+  footer {background: none;}
+}
+
+#apply p {text-align: center; font-size: 28px; .kulturista;}
+
+.search {
+  article a {.gray; display: block;}
+  #searchform {
+    padding: 25px 0 0;
+    #s {font-size: 42px; width: 399px; height: 49px;}
+  }
+}
+
+#focus, .category, .tag {
+  .kulturista;
+  .page_title {margin: 0 0 .5em; text-align: center; .gray; font-size: 60px; padding: 0 15px;}
+}
+
+.single, #faq {
+  .page_title {margin: .2em 0 .5em; text-align: center; text-transform: none;}
+  .stripes li {
+    padding: 5px 0;
+    h2 {
+      margin-bottom: 0;
+      font-size: 32px;
+      a {.blue_dark;}
+    }
+    p {padding: 0 0 0 15px;}
+    a {padding: 0; display: inline;}
+  }
+  .accordion li p {display: none;}
+  .accordion li:target p {display: block;}
+}
+
+#faq .page_title {margin: 0 0 1em 138px; text-align: left;}
+
+#pics article {
+  max-width: 518px;
+  margin: 0 auto;
+  .instapress-shortcode-pager:first-of-type {display: none;}
+}
+
+.category-video, .category-stories, .single-story {
+  background: @gray_light url(../images/texture_bg.jpg) center top repeat fixed !important;
+  footer {background: url(../images/stitch.jpg) center top repeat-x !important;}
+  #maincontent {margin-top: 164px !important;}
+  .page_title {margin: 0 0 1em 138px !important; .red; font-size: 32px; text-align: left; padding: 0;}
+  .videos, .stories {
+    .zeroed;
+    li {list-style: none; margin-bottom: 20px; min-height: 132px;}
+    li:last-of-type {margin-bottom: 0;}
+    a {
+      .gray;
+      display: block;
+      img {float: left; margin: 0 28px;}
+    }
+  }
+  .videos p {padding-left: 258px;}
+  .stories {
+    h2 {.gray; .myriad;}
+    h2 span {font-size: 38px; display: block;}
+    p {padding-left: 178px;}
+  }
+}
+
+#calendar {
+  form {padding: 25px 0 0; font-size: 36px;}
+  form, p {margin: 0;}
+  label {background-color: @gray_lightest; .kulturista; display: block; padding: 10px 28px;}
+  select {border: @gray_light 1px solid; padding: 10px; margin: 15px inherit; .blue_dark;}
+  select:first-of-type {margin-left: 28px;}
+  input {padding-top: 25px;}
+  br {display: none;}
+}
+
+/***** CAROUSEL *****/
+
+#carousel.touchcarousel {
+  width: 640px;
+  height: 178px;
+  position: relative;
+  .touchcarousel-wrapper {background: url(../images/arrows.png) center bottom no-repeat;}
+  .touchcarousel-container {
+    .touchcarousel-item {
+      width: 150px;
+      padding-top: 10px;
+      text-align: center;
+      text-transform: lowercase;
+      .kulturista;
+      img {display: block; width: 110px; margin: 0 auto 8px;}
+      a {.gray;}
+    }
+  }
+  .scrollbar-holder {display: none;}
+}
+
+#home #carousel.touchcarousel {
+  background: url(../images/swipe.png) center top no-repeat;
+  height: 206px;
+  padding-top: 60px;
+  .touchcarousel-wrapper {background-position: center center;}
+  .touchcarousel-container {
+    .touchcarousel-item {padding-top: 42px;}
+  }
+}
+
+#carousel_drop-down {
+  /*top: -178px;*/
+  position: absolute;
+  z-index: 100;
+  background-color: @gray_light;
+  #drop-down_button {
+    .white;
+    .myriad;
+    text-align: center;
+    line-height: 74px;
+    font-size: 32px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+}
+
+.drop-down_up {
+  top: -342px;
+  -webkit-transition: top 1s ease, background-image 0s 1s;
+  -moz-transition: top 1s ease, background-image 0s 1s;  
+  -o-transition: top 1s ease, background-image 0s 1s;  
+  -ms-transition: top 1s ease, background-image 0s 1s;  
+  transition: top 1s ease, background-image 0s 1s;
+  a#drop-down_button {background: @gray_light url(../images/drop-downBG_down.jpg) right center no-repeat; text-shadow: @black 1px 1px 1px;}
+}
+.drop-down_down {
+  top: -164px;
+  a#drop-down_button {background: @gray_light url(../images/drop-downBG_up.jpg) right center no-repeat;}
+}
+  
+
+/***** SUB-CATEGORIES *****/
+
+#sub-categories {
+  margin: 25px 0 0;
+  a {line-height: 90px; font-size: 64px; .kulturista; padding: 10px 30px; height: 90px;}
+  img {float: left; margin-right: 10px;}
+}
+
+#length #sub-categories a {font-size: 42px;}
+
+#options #sub-categories li:nth-of-type(1) a, #options #sub-categories li:nth-of-type(3) a {font-size: 42px; line-height: 45px;}
+#options #sub-categories li:nth-of-type(2) a {font-size: 42px; line-height: 90px;}
+
+/***** ALIGNMENT *****/
+
+.alignleft {display: inline; float: left; margin-right: 1.625em;}
+.alignright {display: inline; float: right; margin-left: 1.625em;}
+.aligncenter {clear: both; display: block; margin-left: auto; margin-right: auto;}
+
+/***** MISC *****/
+
+body.page-template-project-template-php, body.category, body.single, body.tag, body.page-template-calendar-results-php {
+  background-image: none;
+  footer {background: none;}
+}
+
+.single-story .category-stories {
+  background: none !important;
+  img {float: left; margin: 0 15px 10px 28px;}
+}
+
+.page-template-project-template-php, .tag, .category, #calendar-search-results, .single {
+  #letsgo {display: none;}
+  .drop-down_up {top: -278px;}
+  .drop-down_down {top: -100px;}
+}
+.category-video, .category-stories, .single-story {
+  #letsgo {display: inline;}
+  .drop-down_up {top: -342px;}
+  .drop-down_down {top: -164px;}
+}
