@@ -21,7 +21,7 @@ class SummerProject {
 		'id',
 		'world_region'
 	);
-	);
+	
 
 	var $focuses = array(
 	    4  => 'African American community',

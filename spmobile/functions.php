@@ -42,6 +42,17 @@ function carousel() {
 	echo '</script>';	
 }
 
+
+  register_sidebar( array(
+		'name' => 'Tumblr',
+		'id' => 'tumblrspot',
+		'before_widget' => '<div id="tumblrspot">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	));
+
+
 /**
 * This will take the small project id and make a url out of it
 */
@@ -59,6 +70,14 @@ function sp_template_redirect() {
 		$wp_query->is_404    = false;
 		$wp_query->is_search = true;
 		$wp_query->is_page   = true;
+
+		$posts = $sm->search($_GET);
+
+		$wp_query->posts = $posts;
+
+		$wp_query->post_count  = count($posts);
+		$wp_query->found_posts = count($posts);
+
 		include(TEMPLATEPATH . '/search.php');
 		exit;
 	}
@@ -70,18 +89,23 @@ function sp_template_redirect() {
 		$wp_query->is_page   = false;
 		$wp_query->is_single = true;
 
-		$wp_query->post = $sm->get_post(substr($wp->request,strlen('projects/')));
+		$found = $sm->get_post(substr($wp->request,strlen('projects/')));
 
-		$wp_query->posts[0] = $wp_query->post;
+		if(isset($wp_query->post->ID)) {
+			$wp_query->post_count = 1;
 
-		$wp_query->query_vars['page']     = 0;
-		$wp_query->query_vars['name']     = $wp_query->post->ID;
-		$wp_query->query_vars['pagename'] = $wp_query->post->post_title;
+			$wp_query->post     = $found;
+			$wp_query->posts[0] = $wp_query->post;
 
-		$wp_query->queried_object = $wp_query->post;
+			$wp_query->query_vars['page']     = 0;
+			$wp_query->query_vars['name']     = $wp_query->post->ID;
+			$wp_query->query_vars['pagename'] = $wp_query->post->post_title;
 
-		include(TEMPLATEPATH . '/single.php');
-		exit;
+			$wp_query->queried_object = $wp_query->post;
+
+			include(TEMPLATEPATH . '/single.php');
+			exit;
+		}
 	}
 }
 add_action('template_redirect', 'sp_template_redirect');

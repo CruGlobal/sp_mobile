@@ -1,12 +1,4 @@
-<?php
-	global $wp_query;
-
-	$posts = $sm->search($_GET);
-
-	$wp_query->posts = $posts;
-
-	get_header();
-?>
+<?php get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
   <header class="page_header">
