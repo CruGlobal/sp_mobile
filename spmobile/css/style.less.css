@@ -332,11 +332,14 @@ footer #copyright {
 .drop-down_down a#drop-down_button { background:#c2c2c4 url(../images/drop-downBG_up.jpg) right center no-repeat; }
 #sub-categories { margin:25px 0 0; }
 #sub-categories a {
-  line-height:90px;
-  font-size:64px;
-  padding:10px 30px;
-  height:90px;
+  line-height:1.15em;
+  font-size:40px;
+  padding:15px 30px;
   font-family:'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#sub-categories a.withpic {
+  line-height:90px;
+  height:90px;
 }
 #sub-categories img {
   float:left;
@@ -380,6 +383,13 @@ body.page-template-project-template-php footer, body.category footer, body.singl
 .category-video #letsgo, .category-stories #letsgo, .single-story #letsgo { display:inline; }
 .category-video .drop-down_up, .category-stories .drop-down_up, .single-story .drop-down_up { top:-342px; }
 .category-video .drop-down_down, .category-stories .drop-down_down, .single-story .drop-down_down { top:-164px; }
-
-#tumblrspot ul{ list-style:none; padding:0 0 0 15px; }
-#tumblrspot p, #tumblrspot br{ display:none; }
+#maincontent #tumblrspot p {
+  margin:0;
+  display:none;
+}
+#maincontent #tumblrspot ul {
+  list-style:none;
+  margin:0 auto;
+  padding:0;
+  width:500px;
+}
