@@ -11,7 +11,16 @@
 
   <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
     <img src="<?php the_field('story_photo'); ?>" border="0" alt="" />
-    <p><?php the_field('story'); ?></p>
+    <h2>What made you realize God was calling you to go on summer project?</h2>
+    <p><?php the_field('story_calling'); ?></p>
+    <h2>What obstacle did you encounter along the way?</h2>
+    <p><?php the_field('story_obstacle'); ?></p>
+    <h2>What was the turning point?</h2>
+    <p><?php the_field('story_turningpoint'); ?></p>
+    <h2>What practical steps did you take during the process?</h2>
+    <p><?php the_field('story_practicalsteps'); ?></p>
+    <h2>What do you recommend to others who face a similar obstacle?</h2>
+    <p><?php the_field('story_recommendation'); ?></p>
     <p><?php the_field('story_name'); ?> attended <?php the_field('story_project'); ?></p>
     <?php the_content(); ?>
   </article>

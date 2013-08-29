@@ -64,7 +64,9 @@ function sp_permalink() {
 function sp_template_redirect() {
 	global $wp, $wp_query, $sm;
 
-	if(array_intersect(array_keys($wp->query_vars),$sm->keys)) {
+	if(strpos($wp->request,'stories/') !== false){
+		//exclude the stories category
+	}elseif(array_intersect(array_keys($wp->query_vars),$sm->keys)) {
 		header('HTTP/1.1 200 OK');
 
 		$wp_query->is_404    = false;
@@ -80,8 +82,7 @@ function sp_template_redirect() {
 
 		include(TEMPLATEPATH . '/search.php');
 		exit;
-	}
-	elseif(strpos($wp->request,'projects/') === 0) {
+	}elseif(strpos($wp->request,'projects/') === 0) {
 		header('HTTP/1.1 200 OK');
 
 		$wp_query->is_404    = false;
