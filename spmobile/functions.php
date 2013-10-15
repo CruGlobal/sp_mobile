@@ -66,7 +66,7 @@ function sp_template_redirect() {
 
 	if(strpos($wp->request,'stories/') !== false){
 		//exclude the stories category
-	}elseif(array_intersect(array_keys($wp->query_vars),$sm->keys)) {
+	}elseif(array_intersect(array_keys($wp->query_vars),$sm->keys) or is_search()) {
 		header('HTTP/1.1 200 OK');
 
 		$wp_query->is_404    = false;
