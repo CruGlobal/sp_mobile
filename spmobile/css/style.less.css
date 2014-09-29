@@ -156,15 +156,14 @@ footer #copyright {
 }
 #home { background:#00626D url(../images/crosshatch.jpg) center center repeat; }
 #home #home_header {
-  padding:30px 0 20px;
-  background:#fff url(../images/header_bg.jpg) center bottom no-repeat;
+  padding:30px 0 0;
   text-align:center;
 }
 #home #home_header img {
   display:block;
   margin:0 auto;
 }
-#home #home_header #logo { margin-bottom:12px; }
+#home #home_header #logo { margin-bottom:12px; max-width:100%; }
 #home footer { background:none; }
 #apply p {
   text-align:center;

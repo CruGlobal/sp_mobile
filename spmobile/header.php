@@ -74,7 +74,7 @@ $(function() {
   </div>
 
 	<?php //if (is_404() || in_category('stories') || in_category('video') || (is_page() && !is_page_template('project-template.php')) || is_search() || is_single() && !in_category(array( 12,13 ))) { ?>
-    <a href="<?php echo home_url('/'); ?>" id="letsgo"><img src="<?php bloginfo('template_url'); ?>/images/letsgo.png" border="0" alt="" /></a>
+    <a href="<?php echo home_url('/'); ?>" id="letsgo"><img src="<?php bloginfo('template_url'); ?>/images/cru.png" border="0" alt="" /></a>
 	<?php //} ?>
 
 	<div id="maincontent" <?php if (!is_page_template('project-template.php') && !is_page_template('calendar-results.php') && !is_category() && !is_single() && !is_tag()) {?>style="margin-top: 164px;"<?php } ?>>

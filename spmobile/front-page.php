@@ -1,8 +1,7 @@
 <?php get_header() ?>
 
 <header id="home_header">
-  <img src="<?php bloginfo('template_url'); ?>/images/logo.png" border="0" alt="" id="logo" />
-  <img src="<?php bloginfo('template_url'); ?>/images/letsgo.png" border="0" alt="" />
+  <img src="<?php bloginfo('template_url'); ?>/images/M.SMcover.gif" border="0" alt="" id="logo" />
 </header>
 
 <?php carousel(); ?>
